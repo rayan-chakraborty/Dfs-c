@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<malloc.h>
+#include<stdio.h> // for using standard input/output function
+#include<stdlib.h>  // for using malloc() function for dynamic memory allocation
 #include<string.h>
 int *vis;
 int cols=100;
@@ -14,8 +14,9 @@ int main()
     scanf("%d",&edges);
     int mat[vertices][cols];
     memset(mat,0,vertices*cols*sizeof(int));
-    char type[5];///directed or undirected
-    printf("Enter \'dire\' for directed graph or \'undire\' for undirected graph\n");
+    // directed or undirected
+    char type[5];
+    printf("Enter \'D\' for directed graph or \'UD\' for undirected graph\n");
     fflush(stdin);
     scanf("%s",type);
     for(int i=0;i<edges;i++)
@@ -23,12 +24,12 @@ int main()
         int u,v;
         //Scanning the input
         scanf("%d %d",&u,&v);
-        if(strcmp(type,"dire")==0 || strcmp(type,"Dire")==0)
+        if(strcmp(type,"D")==0 || strcmp(type,"d")==0)
         {
             printf("Directed Graph....\n");
             mat[u][v]+=1;
         }
-        else if(strcmp(type,"undire")==0 || strcmp(type,"Undire")==0 || strcmp(type,"udire")==0 ||strcmp(type,"Udire")==0)
+        else if(strcmp(type,"UD")==0 || strcmp(type,"uD")==0 || strcmp(type,"ud")==0 ||strcmp(type,"Ud")==0)
         {
             printf("Undirected Graph....\n");
             mat[u][v]+=1;
